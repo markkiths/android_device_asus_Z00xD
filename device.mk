@@ -38,3 +38,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     device/asus/Z00ED/audio/mixer_paths_mtp.xml:system/vendor/etc/mixer_paths_mtp.xml
+
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.asus_8953
