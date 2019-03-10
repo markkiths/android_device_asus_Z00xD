@@ -41,7 +41,6 @@
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
-#include "util.h"
 
 using android::base::GetProperty;
 using android::init::property_set;
@@ -69,7 +68,7 @@ static int read_file2(const char *fname, char *data, int max_size)
 
     fd = open(fname, O_RDONLY);
     if (fd < 0) {
-        LOG(ERROR) << "failed to open '" << fname << "'\n";
+        ("failed to open '%s'\n", fname);
         return 0;
     }
 
