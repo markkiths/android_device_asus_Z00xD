@@ -30,16 +30,21 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <sys/sysinfo.h>
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
+#include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
+
+using android::base::GetProperty;
+using android::init::property_set;
 
 #define RAW_ID_PATH     "/sys/devices/soc0/raw_id"
 #define BUF_SIZE         64
@@ -49,6 +54,7 @@ static char buff_tmp[BUF_SIZE];
 
 char const *device;
 char const *family;
+char const *product;
 char const *heapstartsize;
 char const *heapgrowthlimit;
 char const *heapsize;
@@ -77,6 +83,33 @@ static int read_file2(const char *fname, char *data, int max_size)
     return 1;
 }
 
+static void init_alarm_boot_properties()
+{
+    int boot_reason;
+    FILE *fp;
+
+    fp = fopen("/proc/sys/kernel/boot_reason", "r");
+    fscanf(fp, "%d", &boot_reason);
+    fclose(fp);
+
+    /*
+     * Setup ro.alarm_boot value to true when it is RTC triggered boot up
+     * For existing PMIC chips, the following mapping applies
+     * for the value of boot_reason:
+     *
+     * 0 -> unknown
+     * 1 -> hard reset
+     * 2 -> sudden momentary power loss (SMPL)
+     * 3 -> real time clock (RTC)
+     * 4 -> DC charger inserted
+     * 5 -> USB charger inserted
+     * 6 -> PON1 pin toggled (for secondary PMICs)
+     * 7 -> CBLPWR_N pin toggled (for external power supply)
+     * 8 -> KPDPWR_N pin toggled (power key pressed)
+     */
+    property_set("ro.alarm_boot", boot_reason == 3 ? "true" : "false");
+}
+
 void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
@@ -86,6 +119,12 @@ void property_override(char const prop[], char const value[])
         __system_property_update(pi, value, strlen(value));
     else
         __system_property_add(prop, strlen(prop), value, strlen(value));
+}
+
+void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
 }
 
 void vendor_load_properties()
