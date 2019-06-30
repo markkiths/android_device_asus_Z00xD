@@ -37,7 +37,7 @@ PRODUCT_PACKAGES += \
     init.target.rc
 
 PRODUCT_COPY_FILES += \
-    device/asus/Z00ED/audio/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml
+    device/asus/Z00ED/audio/mixer_paths_mtp.xml:system/vendor/etc/mixer_paths_mtp.xml
 
 PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_nv.bin
