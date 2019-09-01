@@ -1,0 +1,16 @@
+# Camera (bin)
+bin/ZE500KG_afCali
+bin/Camera_Unique_ID
+bin/BackupCalibrationData
+bin/RestoreCalibrationData
+bin/camera_flash
+bin/camera_flash2
+bin/CameraModule
+bin/CameraOTP
+bin/CameraResolution
+bin/CameraTest
+bin/dit_af_cali
+bin/dit_cali
+bin/LaserOn
+bin/LaserFocus_Status
+bin/mm-qcamera-daemon
