@@ -29,3 +29,29 @@ lib64/hw/sensors.PS_ALS.msm8916.so
 vendor/etc/calmodule.cfg
 vendor/lib/libcalmodule_gyroscope.so
 vendor/lib64/libcalmodule_gyroscope.so
+
+# Keymaster
+etc/firmware/keymaster.b00
+etc/firmware/keymaster.b01
+etc/firmware/keymaster.b02
+etc/firmware/keymaster.b03
+etc/firmware/keymaster.mdt
+
+# Venus firmware
+etc/firmware/venus.b00
+etc/firmware/venus.b01
+etc/firmware/venus.b02
+etc/firmware/venus.b03
+etc/firmware/venus.b04
+etc/firmware/venus.mdt
+
+# WCNSS firmware
+etc/firmware/wcnss.b00
+etc/firmware/wcnss.b01
+etc/firmware/wcnss.b02
+etc/firmware/wcnss.b04
+etc/firmware/wcnss.b06
+etc/firmware/wcnss.b09
+etc/firmware/wcnss.b10
+etc/firmware/wcnss.b11
+etc/firmware/wcnss.mdt
