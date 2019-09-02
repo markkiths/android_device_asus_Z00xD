@@ -14,3 +14,18 @@ bin/dit_cali
 bin/LaserOn
 bin/LaserFocus_Status
 bin/mm-qcamera-daemon
+
+# Sensor
+bin/akmd09911
+etc/sensors/hals.conf
+lib/hw/sensors.AKM.msm8916.so
+lib/sensors.asus.so
+lib/hw/sensors.PS_ALS.msm8916.so
+lib/libcmdthread.so
+lib64/hw/sensors.AKM.msm8916.so
+lib64/sensors.asus.so
+lib64/libcmdthread.so
+lib64/hw/sensors.PS_ALS.msm8916.so
+vendor/etc/calmodule.cfg
+vendor/lib/libcalmodule_gyroscope.so
+vendor/lib64/libcalmodule_gyroscope.so
