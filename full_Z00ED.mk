@@ -29,3 +29,9 @@ PRODUCT_MODEL := Zenfone 2 Laser
 PRODUCT_MANUFACTURER := asus
 
 PRODUCT_GMS_CLIENTID_BASE := android-asus
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="JP_Phone-user 6.0.1 MMB29P 13.1011.1711.16-20180103 release-keys"
+
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := "asus/JP_Phone/ASUS_Z00E_2:6.0.1/MMB29P/13.1011.1711.16-20180103:user/release-keys"
