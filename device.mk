@@ -38,6 +38,3 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     device/asus/Z00ED/audio/mixer_paths_mtp.xml:system/vendor/etc/mixer_paths_mtp.xml
-
-PRODUCT_PACKAGES += \
-    WCNSS_qcom_wlan_nv.bin
