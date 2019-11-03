@@ -1,2 +1,3 @@
-add_lunch_combo slim_Z00ED-userdebug
-add_lunch_combo aokp_Z00ED-userdebug
+add_lunch_combo lineage_Z00ED-userdebug
+add_lunch_combo lineage_Z00ED-user
+add_lunch_combo lineage_Z00ED-eng
