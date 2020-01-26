@@ -120,6 +120,13 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void vendor_load_properties()
+{
+    property_override("ro.product.device", "ASUS_Z00E_2");	
+    property_override("ro.product.model", "ASUS_Z00ED");	
+    property_override("ro.build.product", "ZE500KL");
+}
+
 void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
 {
     property_override(system_prop, value);
