@@ -700,8 +700,7 @@
 
     <path name="camcorder-mic">
         <path name="handset-mic" />
-	<ctl name="ADC3 Volume" value="4" /> <!-- Ryan 160727 -->
-		
+        <ctl name="ADC3 Volume" value="4" /> <!-- Ryan 160727 -->
     </path>
 
     <path name="bt-sco-headset">
