@@ -45,20 +45,6 @@
 using android::base::GetProperty;
 using android::init::property_set;
 
-#define RAW_ID_PATH     "/sys/devices/soc0/raw_id"
-#define BUF_SIZE         64
-
-static char tmp[BUF_SIZE];
-static char buff_tmp[BUF_SIZE];
-
-char const *device;
-char const *family;
-char const *product;
-char const *heapstartsize;
-char const *heapgrowthlimit;
-char const *heapsize;
-char const *heapminfree;
-
 static int read_file2(const char *fname, char *data, int max_size)
 {
     int fd, rc;
