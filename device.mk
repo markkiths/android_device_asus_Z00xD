@@ -20,7 +20,7 @@ $(call inherit-product-if-exists, vendor/asus/Z00xD/Z00xD-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += device/asus/Z00ED/overlay
+DEVICE_PACKAGE_OVERLAYS += device/asus/Z00xD/overlay
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -37,7 +37,7 @@ PRODUCT_PACKAGES += \
     init.target.rc
 
 PRODUCT_COPY_FILES += \
-    device/asus/Z00ED/audio/mixer_paths_mtp.xml:system/vendor/etc/mixer_paths_mtp.xml
+    device/asus/Z00xD/audio/mixer_paths_mtp.xml:system/vendor/etc/mixer_paths_mtp.xml
 
 # Lights
 PRODUCT_PACKAGES += \

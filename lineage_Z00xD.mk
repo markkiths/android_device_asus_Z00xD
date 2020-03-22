@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Inherit from Z00ED device
-$(call inherit-product, device/asus/Z00ED/device.mk)
+# Inherit from Z00xD device
+$(call inherit-product, device/asus/Z00xD/device.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -25,8 +25,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_Z00ED
-PRODUCT_DEVICE := Z00ED
+PRODUCT_NAME := lineage_Z00xD
+PRODUCT_DEVICE := Z00xD
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := Zenfone 2 Laser
 PRODUCT_MANUFACTURER := asus
