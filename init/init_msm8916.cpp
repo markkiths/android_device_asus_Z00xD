@@ -70,5 +70,6 @@ void vendor_load_properties()
         property_override("ro.build.product", "ZE500KG");
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "asus/WW_Phone/ASUS_Z00RD_1:6.0.1/MMB29P/13.10.10.25-20160523:user/release-keys");
         property_override("ro.build.description", "WW_Phone-user 6.0.1 MMB29P 13.10.10.25-20160523 release-keys");
+        property_override("ro.power_profile.override", "power_profile_2");
     }
 }
