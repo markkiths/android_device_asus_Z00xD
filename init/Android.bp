@@ -1,5 +1,5 @@
 cc_library_static {
-    name: "libinit_msm8916",
+    name: "libinit_Z00xD",
     recovery_available: true,
 
     include_dirs: ["system/core/init"],
