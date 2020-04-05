@@ -72,4 +72,6 @@ void vendor_load_properties()
         property_override("ro.build.description", "WW_Phone-user 6.0.1 MMB29P 13.10.10.25-20160523 release-keys");
         property_override("ro.power_profile.override", "power_profile_2");
     }
+    // Init a dummy BT MAC address, will be overwritten later
+    property_override("ro.boot.btmacaddr", "00:00:00:00:00:00");
 }
