@@ -1,4 +1,4 @@
-# Unified Device Tree for Asus Zenfone 2 Laser (720p)
+# Unified Device Tree for Asus Zenfone 2 Laser ZE500KL/KG (720p)
 
 ## Spec Sheet
 
@@ -13,7 +13,7 @@
 | Kernel Version          | 3.10                                               |
 | Storage                 | 8/16 GB                                            |
 | MicroSD                 | Up to 256 GB                                       |
-| Battery                 | Li-Po 2400 mAh (removable)                         |
+| Battery                 | Li-Po 2400/2070 mAh (removable)                    |
 | Display                 | 720 x 1280 pixels, 5.0 (~294 PPI)                  |
 | Rear Camera             | 13 MP, laser autofocus, dual-LED (dual tone) flash |
 | Front Camera            | 5 MP                                               |
@@ -21,6 +21,6 @@
 
 ## Device Picture
 
-![Asus Zenfone 2 Laser (720p)](https://cdn2.gsmarena.com/vv/pics/asus/zenfone-2-laser-ze500-1.jpg "Asus Zenfone 2 Laser (720p)")
+![Asus Zenfone 2 Laser ZE500KL/KG (720p)](https://cdn2.gsmarena.com/vv/pics/asus/zenfone-2-laser-ze500-1.jpg "Asus Zenfone 2 Laser ZE500KL/KG (720p)")
 
-Copyright (C) 2019 - Roker2
+Copyright (C) 2019-2020 - Roker2
