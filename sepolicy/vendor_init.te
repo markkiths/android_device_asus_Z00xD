@@ -1,0 +1,2 @@
+# camera scripts
+allow vendor_init system_data_file:lnk_file { create setattr unlink };
