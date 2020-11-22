@@ -70,4 +70,7 @@ void vendor_load_properties()
     }
     // Init a dummy BT MAC address, will be overwritten later
     property_override("ro.boot.btmacaddr", "00:00:00:00:00:00");
+    property_override("ro.debuggable", "0");
+    property_override_dual("ro.build.type", "ro.vendor.build.type", "user");	
+    property_override_dual("ro.build.tags", "ro.vendor.build.tags", "release-keys");	
 }
