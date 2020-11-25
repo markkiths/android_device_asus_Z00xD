@@ -19,14 +19,24 @@ $(call inherit-product, device/asus/Z00xD/device.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AOSP-AEX stuff.
+ifeq ($(shell test -e vendor/aosp/config/aex_props.mk && echo -n yes), yes)
+$(call inherit-product, vendor/aosp/common.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+endif
+# Inherit some common AOSP-PE stuff.
+ifeq ($(shell test -e vendor/pixelstyle/config.mk && echo -n yes), yes)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+endif
+
+TARGET_BOOT_ANIMATION_RES := 720
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_Z00xD
+PRODUCT_NAME := aosp_Z00xD
 PRODUCT_DEVICE := Z00xD
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := Zenfone 2 Laser
