@@ -27,7 +27,7 @@ $(call inherit-product, vendor/aosp/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 endif
 # Inherit some common AOSP-PE stuff.
-ifeq ($(shell test -e vendor/pixelstyle/config.mk && echo -n yes), yes)
+ifeq ($(shell test -e vendor/aosp/overlay-pixel && echo -n yes), yes)
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
