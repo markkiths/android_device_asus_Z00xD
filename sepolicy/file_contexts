@@ -1,2 +1,0 @@
-# Hals
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.asus_8953       u:object_r:hal_light_default_exec:s0
