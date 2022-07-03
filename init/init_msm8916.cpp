@@ -16,8 +16,9 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
+void property_override_triple(char const product_prop[], char const system_prop[], char const vendor_prop[], char const value[])
 {
+    property_override(product_prop, value);
     property_override(system_prop, value);
     property_override(vendor_prop, value);
 }
@@ -31,7 +32,7 @@ bool property_equal_char(char const prop[], char const value[])
     if(strncmp(system_prop, value, 1) == 0) {
         ret = true;
     }
-    
+
     return ret;
 }
 
@@ -59,17 +60,17 @@ void vendor_load_properties()
     device_model = device_model_get();
 
     if (device_model == 1) {
-        property_override_dual("ro.product.device", "ro.product.vendor.device", "ASUS_Z00E_2");	
-        property_override_dual("ro.product.model", "ro.product.vendor.model", "ASUS_Z00ED");	
-        property_override("ro.build.product", "ZE500KL");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "asus/WW_Phone/ASUS_Z00E_2:6.0.1/MMB29P/13.1010.1612.53-20170202:user/release-keys");
-        property_override("ro.build.description", "WW_Phone-user 6.0.1 MMB29P 13.1010.1612.53-20170202 release-keys");
+        property_override_triple("ro.product.device", "ro.product.system.device", "ro.product.vendor.device", "ASUS_Z00E_2");
+        property_override_triple("ro.product.model", "ro.product.system.model", "ro.product.vendor.model", "ASUS_Z00ED");
+        property_override("ro.product.name", "ZE500KL");
+        property_override_triple("ro.build.fingerprint", "ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "asus/WW_Phone/ASUS_Z00E_2:6.0.1/MMB29P/13.1010.1612.53-20170202:user/release-keys");
+        property_override_triple("ro.build.description", "ro.system.build.description", "ro.vendor.description", "WW_Phone-user 6.0.1 MMB29P 13.1010.1612.53-20170202 release-keys");
     } else if (device_model == 2) {
-        property_override_dual("ro.product.device", "ro.product.vendor.device", "ASUS_Z00RD_1");	
-        property_override_dual("ro.product.model", "ro.product.vendor.model", "ASUS_Z00RD");	
-        property_override("ro.build.product", "ZE500KG");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "asus/WW_Phone/ASUS_Z00RD_1:6.0.1/MMB29P/13.10.10.25-20160523:user/release-keys");
-        property_override("ro.build.description", "WW_Phone-user 6.0.1 MMB29P 13.10.10.25-20160523 release-keys");
+        property_override_triple("ro.product.device", "ro.product.system.device", "ro.product.vendor.device", "ASUS_Z00RD_1");
+        property_override_triple("ro.product.model", "ro.product.system.model", "ro.product.vendor.model", "ASUS_Z00RD");
+        property_override("ro.product.name", "ZE500KG");
+        property_override_triple("ro.build.fingerprint", "ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "asus/WW_Phone/ASUS_Z00RD_1:6.0.1/MMB29P/13.10.10.25-20160523:user/release-keys");
+        property_override_triple("ro.build.description", "ro.system.build.description", "ro.vendor.description", "WW_Phone-user 6.0.1 MMB29P 13.10.10.25-20160523 release-keys");
         property_override("ro.power_profile.override", "power_profile_2");
     }
     // Init a dummy BT MAC address, will be overwritten later
