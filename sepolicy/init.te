@@ -1,2 +1,0 @@
-# light hal from ZenFone 3
-allow init vendor_file:file execute_no_trans;
